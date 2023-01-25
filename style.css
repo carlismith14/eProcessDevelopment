@@ -550,7 +550,9 @@ footer {
 
   /* hero section */
 
-  
+  .nav_li-ctcbtn{
+    display: block;
+  }
 
   .hero__content{
     flex-direction: column;
@@ -572,6 +574,39 @@ footer {
 
 
 
+/* navigation */
+
+.nav-toggle {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.75rem;
+
+  color: white;
+  transition: opacity 250ms ease;
+  position: absolute;
+  right: 1.5rem;
+}
+
+.navbar {
+  display: none;
+  position: absolute;
+  top: 5.6em;
+  left: 0;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: var(--color-royalblue);
+  z-index: 1000;
+  height: 40%;
+}
+
+.active {
+  display: block;
+}
+
+
+
 
 
 
@@ -581,33 +616,7 @@ footer {
 
   .services{
     grid-template-columns: 1fr;
-    gap: ;
-  }
-    .nav-toggle {
-    display: inline-block;
-    cursor: pointer;
-    font-size: 1.75rem;
 
-    color: white;
-    transition: opacity 250ms ease;
-    position: absolute;
-    right: 1.5rem;
-  }
-
-  .navbar {
-    display: none;
-    position: fixed;
-    top: 5.6em;
-    left: 0;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    background: var(--color-lightgray);
-  }
-
-  .active {
-    display: block;
   }
 
 
