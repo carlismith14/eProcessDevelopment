@@ -189,6 +189,10 @@ nav a {
   gap: 3em;
 }
 
+.hero_paddingdiv{
+  display: none;
+}
+
 .hero_test{
     max-height: 650px;
     /* max-height: 80%; */
@@ -201,6 +205,7 @@ nav a {
     /* margin-bottom: 5em; */
     aspect-ratio: 1/1;
     align-self: top;
+    
 }
 
 
@@ -519,25 +524,50 @@ footer {
     bottom: -50px;
     background:var(--color-royalblue);
     transform: skewY(-3deg);
-    z-index: -1;
+    z-index: -20001;
   }
   
 
+  .hero{
+    /* position: relative; */
+    z-index: -199;
+  }
+
   .hero__content{
     display: block;
-
     /* max-height: 50%; */
 }
 
-
+.hero_paddingdiv{
+  display: block;
+  padding-bottom: 200px;
+}
 
   .hero_test{
-  
-    max-height: 300px;
+    width: 70%;
+    /* max-height: 70%; */
+     /* clip-path: circle(50% at 50% 50%); */
+
+    position: absolute;
+    /* width: 70%; */
+
+    aspect-ratio: 1/1;
+    /* height: 200px; */
+   
+    top: calc(150% / 2);
+    margin-top:calc((35% / 2) * -1);
+
+    left: calc(70% / 2);
+    margin-left: calc((35% / 2) * -1);
+    
+
+
     /* justify-content: center; */
     /* z-index: 111; */
-    margin: -2em auto;
+    /* margin: -2em auto; */
+    
     /* margin-bottom: 4em; */
+    z-index: 13300;
    }  
 
 
