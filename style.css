@@ -416,8 +416,25 @@ footer::before {
 
 .footer__contact {
   font-weight: 800;
+  margin-bottom: .25em;
 }
 
+.sociallink{
+  margin-left: 1em;
+
+}
+
+.footer__social{
+  margin-top: .25rem;
+  
+  /* display: flex; */
+
+
+}
+
+.sociallink{
+  gap: 4em;
+}
 /* copyright banner */
 .copyright {
   display: flex;
