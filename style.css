@@ -149,6 +149,33 @@ nav a {
   display: none;
 }
 
+/* Set the default style for the link */
+.link-with-bar {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  padding-bottom: 2px;
+  font-size: 1.25rem;
+
+}
+
+/* Create the bar and position it at the bottom of the link */
+.link-with-bar::after {
+  content: '';
+  position: absolute;
+  bottom: -2.5px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--color-teal);
+  transition: width 0.3s ease-in-out;
+}
+
+/* Define the hover state for the link */
+.link-with-bar:hover::after {
+  width: 100%;
+}
+
 /* hero section */
 
 .hero {
@@ -164,6 +191,8 @@ nav a {
   align-items: center;
   gap: 3em;
 }
+
+
 
 .hero_paddingdiv {
   display: none;
@@ -182,6 +211,8 @@ nav a {
   aspect-ratio: 1/1;
   align-self: top;
 }
+
+
 
 .hero__text {
   padding-bottom: 4em;
@@ -219,6 +250,13 @@ nav a {
   max-width: 150px;
   max-height: 90px;
   object-fit: contain;
+  transition: transform 0.2s ease-in-out;
+
+}
+
+.client__logo:hover{
+  transform: scale(1.2); /* adjust this value as needed */
+
 }
 
 .client__logo--ff {
@@ -240,7 +278,7 @@ nav a {
 
 .aboutUs__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(calc(300px - 6rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(calc(375px - 6rem), 1fr));
   gap: 4em;
   place-items: center;
   justify-content: center;
@@ -285,6 +323,8 @@ nav a {
 
 .aboutUs__text {
   font-weight: lighter;
+  line-height: 1.5;
+  font-size: 1.25rem;
 }
 
 /* Services */
@@ -313,14 +353,21 @@ nav a {
 }
 
 .services {
+
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: max-content;
   gap: 2rem;
+
 }
 
 .service {
   /* padding: 1em; */
   text-align: center;
+  /* background: white; */
+  padding: 2rem 1rem;
+  /* padding: 0.5rem calc(6rem - 2rem); */
+
 }
 
 .services__icon {
@@ -331,17 +378,54 @@ nav a {
 }
 
 .services__description {
+  margin-top: .5em;
   display: grid;
   place-items: center;
-  padding: 0.5rem calc(6rem - 2rem);
   font-weight: 100;
   font-size: 0.95rem;
+  /* max-width: 400px; */
+  line-height: 1.5;
+}
+
+p.services__description{
   max-width: 400px;
+
 }
 
 .service--button {
   align-self: center;
 }
+
+
+
+.bottom-with-bar {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  padding-bottom: 2px;
+  font-size: 1rem;
+
+}
+
+/* Create the bar and position it at the bottom of the bottom */
+.bottom-with-bar::after {
+  content: '';
+  position: absolute;
+  bottom: -2.5px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--color-teal);
+  transition: width 0.3s ease-in-out;
+}
+
+/* Define the hover state for the bottom */
+.bottom-with-bar:hover::after {
+  width: 100%;
+}
+
+
+
 
 /*footer section*/
 
@@ -419,22 +503,33 @@ footer::before {
   margin-bottom: .25em;
 }
 
-.sociallink{
-  margin-left: 1em;
 
+
+.fa-brands {
+  display: inline-block;
+  width: 15px;
+  height: 10px;
+  margin-right: 10px;
 }
 
-.footer__social{
-  margin-top: .25rem;
-  
-  /* display: flex; */
-
-
+.footer__social a:hover {
+  transform: scale(1.2);
+  color: #1abc9c; /* adjust this value as needed */
 }
 
-.sociallink{
-  gap: 4em;
+
+.footer__social a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  transition: transform .2s ease-in-out;
 }
+
+.footer__social a i {
+  font-size: 1em;
+}
+
 /* copyright banner */
 .copyright {
   display: flex;
@@ -446,7 +541,8 @@ footer::before {
   /* background-color: white; */
 }
 
-@media (max-width: 800px) {
+@media screen and (min-device-width: 650px) and (max-device-width: 899px) { 
+
   header {
     height: 30vh;
 
@@ -468,9 +564,11 @@ footer::before {
   }
 
   .hero {
-    /* position: relative; */
+    position: relative;
     z-index: -199;
   }
+
+  
 
   .hero__content {
     display: block;
@@ -482,19 +580,96 @@ footer::before {
     padding-bottom: 200px;
   }
 
+
   .hero_test {
-    width: 70%;
+    width: 50%;
+    /* height: 60%; */
     /* max-height: 70%; */
-    /* clip-path: circle(50% at 50% 50%); */
+    /* clip-path: circle(50% at 50% 50%);
 
     position: absolute;
     /* width: 70%; */
+    position: absolute;
+    aspect-ratio: 1/1;
+    /* height: 200px; */
 
+    top: calc(160% / 2);
+    /* bottom: -100px; */
+    margin-top: calc((70% / 2) * -1);
+
+    left: calc(70% / 2);
+    margin-left: calc((20% / 2) * -1);
+
+    /* justify-content: center; */
+    /* z-index: 111; */
+    /* margin: -2em auto; */
+
+    /* margin-bottom: 4em; */
+    z-index: 13300;
+  } 
+
+  header {
+    height: 70vh;
+  }
+
+
+}
+
+
+@media (max-width: 649px) {
+  header {
+    height: 30vh;
+
+    min-height: 500px;
+  }
+
+  header::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 40%;
+    transform-origin: left;
+    left: 0px;
+    bottom: -50px;
+    background: var(--color-royalblue);
+    transform: skewY(-3deg);
+    z-index: -20001;
+  }
+
+  .hero {
+    position: relative;
+    z-index: -199;
+  }
+
+  
+
+  .hero__content {
+    display: block;
+    /* max-height: 50%; */
+  }
+
+  .hero_paddingdiv {
+    display: block;
+    padding-bottom: 200px;
+  }
+
+
+  .hero_test {
+    width: 70%;
+    /* height: 60%; */
+    /* max-height: 70%; */
+    /* clip-path: circle(50% at 50% 50%);
+
+    position: absolute;
+    /* width: 70%; */
+    position: absolute;
     aspect-ratio: 1/1;
     /* height: 200px; */
 
     top: calc(140% / 2);
-    margin-top: calc((35% / 2) * -1);
+    /* bottom: -100px; */
+    margin-top: calc((55% / 2) * -1);
 
     left: calc(70% / 2);
     margin-left: calc((35% / 2) * -1);
@@ -505,7 +680,7 @@ footer::before {
 
     /* margin-bottom: 4em; */
     z-index: 13300;
-  }
+  } 
 
   header {
     height: 70vh;
@@ -522,7 +697,7 @@ footer::before {
   }
 
   .hero__content {
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 1em;
     padding: 0;
   }
